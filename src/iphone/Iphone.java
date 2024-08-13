@@ -6,58 +6,110 @@ import iphone.aplicativos.ReprodutorMusial;
 
 public class Iphone implements ReprodutorMusial, AparelhoTelefonico, NavegadorInternet{
 
-    @Override
+    public String usuário;
+    public String aplicativo;
+    public String numeroTelefone;
+    public String url;
+    public String musica;
+    
+    public void ligarTelefone()
+    {
+        System.out.println("Ligando telefone.");
+    }
+
+    public void desbloquear()
+    {
+        System.out.println("Celular desbloqueado. Bem vindo " + usuário);
+    }
+
+    public void bloquear()
+    {
+        System.out.println("Celular bloqueado.");
+    }
+
+    public void desligar()
+    {
+        System.out.println("Desligando celular!");
+    }
+
+    public void selecionarAplicacao(String aplicativo)
+    {
+        System.out.println("Aplicativo selecionado: "+aplicativo);
+        switch (aplicativo) {
+            case "Musica":
+                tocar();
+                pausar();
+                selecionarMusica(musica);
+                break;
+            
+            case "Telefone":
+                ligar(numeroTelefone);
+                atender();
+                iniciarCorreioVoz();
+                break;
+
+            case "Internet":
+                exibirPagina(url);
+                adicionarNovaAba();
+                atualizarPagina();
+                break;
+            
+            default:
+                break;
+        }
+    }
+
     public void exibirPagina(String url) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'exibirPagina'");
+        
+        System.out.println("Exibindo página '"+ url +"' no navegador!");
+
     }
 
-    @Override
     public void adicionarNovaAba() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'adicionarNovaAba'");
+        
+        System.out.println("Adicionando nova página ao navegador!");
+
     }
 
-    @Override
     public void atualizarPagina() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'atualizarPagina'");
+        
+        System.out.println("Atualizando pagina");
+
     }
 
-    @Override
     public void ligar(String numero) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'ligar'");
+        
+        System.out.println("Ligando para o telefone: " + numero);
+
     }
 
-    @Override
     public void atender() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'atender'");
+        
+        System.out.println("Atendendo telefone.");
+
     }
 
-    @Override
     public void iniciarCorreioVoz() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'iniciarCorreioVoz'");
+        
+        System.out.println("Iniciando correio de voz.");
+
     }
 
-    @Override
     public void tocar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'tocar'");
+        
+        System.out.println("Tocando música.");
+
     }
 
-    @Override
     public void pausar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pausar'");
+        
+        System.out.println("Pausar música.");
     }
 
-    @Override
     public void selecionarMusica(String musica) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'selecionarMusica'");
+        
+        System.out.println("Música selecionada: "+ musica);
+
     }
     
 }
